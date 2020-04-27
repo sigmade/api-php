@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/resources/foundation/css/foundation.min.css"/>
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-plateau-dark.min.css">
+    {% block css %}{% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+{% block content %}{% endblock %}
+
+
+<script type="text/javascript" src="/resources/foundation/js/vendor/jquery.js"></script>
+<script type="text/javascript" src="/resources/foundation/js/vendor/foundation.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+  $(document).foundation();
+  hljs.initHighlightingOnLoad();
+</script>
+{% block scripts %}{% endblock %}
+
+</body>
+</html>
