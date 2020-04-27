@@ -6,18 +6,16 @@ require_once("back/vendor/autoload.php");
 -----------------------------------*/
 require_once "settings.php";
 
-
 /*-----------------------------------
 Основные глобальные классы
 -----------------------------------*/
-$User   = new \classes\User();
-$Path   = new \classes\helpers\Path();
+$Path       = new \classes\helpers\Path();
 //$Auth       = new \classes\Auth();
 
 /*-----------------------------------
 Глобальные выборки
 -----------------------------------*/
-$globals["auth"] =  $User->isAuth($_COOKIE['token']);
+//$globals["auth"] =  $Auth->isAuth($_COOKIE['token'])['response'];
 
 $Path->parse();
 

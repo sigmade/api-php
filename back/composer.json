@@ -2,10 +2,10 @@
     "autoload": {
         "psr-4": {"classes\\": "classes/", "\\": ""}
     },
+    "require": {
+        "twig/twig": "^2.0"
+    },
     "require-dev": {
         "phpunit/phpunit": "^6"
-    },
-    "require": {
-        "twig/twig": "~2.0"
     }
 }

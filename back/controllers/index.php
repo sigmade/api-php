@@ -1,3 +1,3 @@
 <?php
 
-echo "hello";
+\classes\helpers\Twig::render("pages/welcome", []);
