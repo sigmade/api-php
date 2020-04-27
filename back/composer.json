@@ -6,9 +6,6 @@
         "phpunit/phpunit": "^6"
     },
     "require": {
-        "twig/twig": "~2.0",
-        "joshcam/mysqli-database-class": "^2.9",
-        "phpmailer/phpmailer": "^6.0",
-        "fzaninotto/faker": "^1.7"
+        "twig/twig": "~2.0"
     }
 }
