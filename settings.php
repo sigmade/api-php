@@ -9,7 +9,7 @@ define("VIEWS_DIR", APP_DIR.DS.'views');
 define("FUNC_DIR", APP_DIR.DS.'functions');
 
 define("TWIG_CACHE", false);
-define("HOST", "http://vue-feed-api/");
+define("HOST", "http://api.ru/");
 
 
 //DB

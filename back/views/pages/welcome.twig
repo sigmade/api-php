@@ -11,8 +11,15 @@
 
                 <div style="height: 50px;"></div>
 
+                {% if need_verified %}
+                <div class="callout warning">
+                    {{  need_verified }}
+                </div>
+                {% endif %}
+
                 <div style="max-width: 320px; margin: 0 auto;">
-                    <form action="post">
+                    <form action="/api" method="post">
+                        <input type="hidden" name="method_name" value="login">
                         <input type="text" name="email" placeholder="email">
                         <input type="password" name="pass" placeholder="password">
                         <div class="text-center"><input class="button" type="submit" name="submit" value="Login / Register"></div>
