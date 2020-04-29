@@ -1,0 +1,73 @@
+
+<div style="margin-top: 35px;"></div>
+<h3>Methods</h3>
+<p>Request запрос должен быть <b>POST / json</b> <br>
+    url for request: <b>{{ host }}api/</b> <br>
+    <b>~</b> - не обязательный параметр
+
+
+</p>
+
+<ul class="accordion"
+    data-accordion
+    data-multi-expand="true"
+>
+    <li class="accordion-item" data-accordion-item>
+
+        <a href="#" class="accordion-title">Client get. Получить список клиентов</a>
+
+        <div class="accordion-content" data-tab-content>
+            <div class="grid-x grid-margin-x">
+                <div class="cell small-12 medium-6">
+                    <h5>Request:</h5>
+                    <ul>
+                        <li><b>method_name</b>: client_get</li>
+                        <li><b>m</b>: 2</li>
+                        <li><b>email</b>: (string)</li>
+                        <li><b>pass</b>: (string)</li>
+                        <li>~ <b>public_key</b>: (string)</li>
+                    </ul>
+                </div>
+                <div class="cell small-12 medium-6">
+                    <h5>Response:</h5>
+
+                    <pre><code class="json">
+{
+  "response": [
+    {
+      "id": 21,
+      "user_id": 1,
+      "date": 1521647984,
+      "public_key": "bd18fd90e8db01359ca21f682499abd8c1f4845dc849bb7167e14ca9944e7a21",
+      "private_key": "969a5d7a003e6ecaab166fb31bf625febbc4e510048b1bdb92c0ecd50de98e12",
+      "title": "gdfg df gdfg df g"
+    },
+    {
+      "id": 22,
+      "user_id": 1,
+      "date": 1521647988,
+      "public_key": "6273f055259d521633471414ed3ca2163682b0f6b81b777a1af5fd237e519b78",
+      "private_key": "631e1be3db0984f8f5234cee00e0a83873f0259c7f7680e41d3568c658aef00f",
+      "title": "j ghjghj ghj"
+    },
+    {
+      "id": 23,
+      "user_id": 1,
+      "date": 1521647992,
+      "public_key": "6215b5e6aa8518fbc9d3842b22522492bdc526422f848eba6d532e1562eb6df9",
+      "private_key": "2744a4d285c6e950fdc44e94688235ef89830b12f0c00ef7196dd7171606fd62",
+      "title": "fgdsfsd fsdf sdf"
+    }
+  ]
+}
+                            </code></pre>
+
+                </div>
+
+            </div>
+
+        </div>
+    </li>
+
+
+</ul>

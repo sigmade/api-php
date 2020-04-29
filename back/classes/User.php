@@ -18,27 +18,12 @@ class User
 
     public function login(array $array)
     {
-        if(!$email = filter_var($array["email"], FILTER_VALIDATE_EMAIL))
-        {
-            throw new \Exception("Не корректный email", 1);
-        }
-
-        $email = strtolower($email);
-
-        $this->DB->where("email", $email);
-        $resDb = $this->DB->getOne("users");
+        $resDb = $this->check_email_and_pass($array);
+        $email = strtolower($array["email"]);
 
         // если пользователь есть в базе
         if($resDb)
         {
-            if(!$array["pass"] || !password_verify($array["pass"], $resDb["pass"])){
-                throw new \Exception("Не верный пароль", 2);
-            }
-
-            if(!$resDb['verified']){
-                throw new \Exception("Необходимо подтвердить email");
-            }
-
             return $resDb;
         }
 
@@ -104,5 +89,31 @@ class User
     public function new_token()
     {
         return hash("md5", time().rand());
+    }
+
+    public function check_email_and_pass($array)
+    {
+        if(!$email = filter_var($array["email"], FILTER_VALIDATE_EMAIL))
+        {
+            throw new \Exception("Не корректный email", 1);
+        }
+
+        $email = strtolower($email);
+
+        $this->DB->where("email", $email);
+        $resDb = $this->DB->getOne("users");
+
+        if (!$resDb){ return false; }
+
+        if(!$array["pass"] || !password_verify($array["pass"], $resDb["pass"])){
+            throw new \Exception("Не верный пароль", 2);
+        }
+
+        if(!$resDb['verified']){
+            throw new \Exception("Необходимо подтвердить email");
+        }
+
+        return $resDb;
+
     }
 }
