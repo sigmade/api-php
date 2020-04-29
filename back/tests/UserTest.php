@@ -19,9 +19,16 @@ class UserTest extends TestCase
     }
 
     public function test_confirm()
-    {
-        $res = (new User())->confirm( "df0a65347b0034698cb7bd1fcd6e41ce");
+{
+    $res = (new User())->confirm( "df0a65347b0034698cb7bd1fcd6e41ce");
 
-        $this->assertTrue(is_array($res) || is_null($res));
+    $this->assertTrue(is_array($res) || is_null($res));
+}
+
+    public function test_isAuth()
+    {
+        $res = (new User())->isAuth( "50c1a1bead967424918ece43ac14be0a");
+
+        $this->assertTrue(is_array($res) || is_bool($res));
     }
 }

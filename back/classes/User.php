@@ -76,20 +76,28 @@ class User
     }
 
     public function confirm(string $token)
+{
+    if(!$token = TextSecurity::shield_hard($token))
     {
-        if(!$token = TextSecurity::shield_hard($token))
-        {
-            throw new \Exception("Не корректный токен");
-        }
+        throw new \Exception("Не корректный токен");
+    }
 
-        $new_token = $this->new_token();
+    $new_token = $this->new_token();
+    $this->DB->where("token", $token);
+    $this->DB->update("users", [
+        "token" => $new_token,
+        "verified" => 1
+    ]);
+
+    $this->DB->where("token", $new_token);
+    return $this->DB->getOne("users");
+}
+
+    public function isAuth($token)
+    {
+        if(!$token = TextSecurity::shield_hard($token)){ return false; }
+
         $this->DB->where("token", $token);
-        $this->DB->update("users", [
-           "token" => $new_token,
-           "verified" => 1
-        ]);
-
-        $this->DB->where("token", $new_token);
         return $this->DB->getOne("users");
     }
 

@@ -1,0 +1,39 @@
+<div style="margin-top: 35px;"></div>
+<h3>Clients</h3>
+
+<ul class="accordion"
+    data-accordion
+    data-multi-expand="true"
+>
+
+    {% for item in clients %}
+    <li class="accordion-item" data-accordion-item>
+
+        <a href="#" class="accordion-title">{{ item.title }}</a>
+
+
+        <div class="accordion-content" data-tab-content>
+            <div class="grid-x grid-margin-x">
+                <div class="cell small-12 medium-5">
+                    <div class="input-group">
+                        <label class="input-group-label">public key</label>
+                        <input class="input-group-field" type="text" value="{{ item.public_key }}">
+                    </div>
+                </div>
+                <div class="cell small-12 medium-5">
+                    <div class="input-group">
+                        <label class="input-group-label">private key</label>
+                        <input class="input-group-field" type="text" value="{{ item.private_key }}">
+                    </div>
+                </div>
+                <div class="cell small-12 medium-2">
+                    <a data-js="delete" href="/api/?method_name=client_delete&id={{ item.id }}" class="button hollow tiny expanded secondary">
+                        <i class="material-icons">delete</i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+
+</ul>
