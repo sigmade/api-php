@@ -5,6 +5,7 @@ namespace classes;
 use classes\helpers\DB;
 use classes\helpers\TextSecurity;
 
+
 class Client
 {
     public function __construct()
@@ -55,6 +56,15 @@ class Client
         $this->DB->delete("clients");
 
         return true;
+    }
+
+    public function check_key(string $key, $type = 'private')
+    {
+        $type = ($type == "private")? 'private_key' : 'public_key';
+
+        $this->DB->where($type, TextSecurity::shield_hard($key));
+        return $this->DB->getOne("clients");
+
     }
 
 }

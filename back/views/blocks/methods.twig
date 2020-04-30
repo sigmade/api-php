@@ -69,5 +69,205 @@
         </div>
     </li>
 
+    <li class="accordion-item" data-accordion-item>
+
+        <a href="#" class="accordion-title">Feed add. Добавить запись в ленту</a>
+
+        <div class="accordion-content" data-tab-content>
+            <div class="grid-x grid-margin-x">
+                <div class="cell small-12 medium-6">
+                    <h5>Request:</h5>
+                    <ul>
+                        <li><b>method_name</b>: feed_add</li>
+                        <li><b>private_key</b>: (string)</li>
+                        <li><b>title</b>: (string)</li>
+                        <li><b>text</b>: (string)</li>
+                        <li><b>protected</b>: (bool)</li>
+                    </ul>
+                </div>
+                <div class="cell small-12 medium-6">
+                    <h5>Response:</h5>
+
+                    <pre><code class="json">
+{
+    "response":{
+    "title":"titletext",
+    "text":"supertext",
+    "protected":0,
+    "date":1588182985,
+    "client_id":1,
+    "id":7
+}}                          </code></pre>
+
+                </div>
+
+            </div>
+
+        </div>
+    </li>
+
+    <li class="accordion-item" data-accordion-item>
+
+        <a href="#" class="accordion-title">Feed edit. Редактировать запись в ленте</a>
+
+        <div class="accordion-content" data-tab-content>
+            <div class="grid-x grid-margin-x">
+                <div class="cell small-12 medium-6">
+                    <h5>Request:</h5>
+                    <ul>
+                        <li><b>method_name</b>: feed_edit</li>
+                        <li><b>private_key</b>: (string)</li>
+                        <li><b>id</b>: (int)</li>
+                        <li><b>title</b>: (string)</li>
+                        <li><b>text</b>: (string)</li>
+                        <li><b>protected</b>: (bool)</li>
+                    </ul>
+                </div>
+                <div class="cell small-12 medium-6">
+                    <h5>Response:</h5>
+
+                    <pre><code class="json">
+{"response":true}
+                           </code></pre>
+
+                </div>
+
+            </div>
+
+        </div>
+    </li>
+
+    <li class="accordion-item" data-accordion-item>
+
+        <a href="#" class="accordion-title">Feed delete. Удалить запись в ленте</a>
+
+        <div class="accordion-content" data-tab-content>
+            <div class="grid-x grid-margin-x">
+                <div class="cell small-12 medium-6">
+                    <h5>Request:</h5>
+                    <ul>
+                        <li><b>method_name</b>: feed_delete</li>
+                        <li><b>private_key</b>: (string)</li>
+                        <li><b>id</b>: (int)</li>
+                    </ul>
+                </div>
+                <div class="cell small-12 medium-6">
+                    <h5>Response:</h5>
+
+                    <pre><code class="json">
+{"response":true}
+                            </code></pre>
+
+                </div>
+
+            </div>
+
+        </div>
+    </li>
+
+    <li class="accordion-item" data-accordion-item>
+
+        <a href="#" class="accordion-title">Feed get. Получить инфо про запись по id</a>
+
+        <div class="accordion-content" data-tab-content>
+            <div class="grid-x grid-margin-x">
+                <div class="cell small-12 medium-6">
+                    <h5>Request:</h5>
+                    <ul>
+                        <li><b>method_name</b>: feed_get</li>
+                        <li><b>m</b>: 1</li>
+                        <li><b>id</b>: (int)</li>
+                        <li><b>public_key</b>: (string)</li>
+                        <li>~ <b>private_key</b>: (string)</li>
+                    </ul>
+                </div>
+                <div class="cell small-12 medium-6">
+                    <h5>Response:</h5>
+
+                    <pre><code class="json">
+{
+  "response": {
+    "id": 7,
+    "client_id": 21,
+    "title": "Eos saepe est cupiditate quia.",
+    "text": "HE taught us Drawling, Stretching, and Fainting in Coils.' 'What was THAT like?' said Alice. 'Come, let's try Geography. London is the driest thing I ask! It's always six o'clock now.' A bright idea.",
+    "date": 1522330943,
+    "protected": 1
+  }
+}
+                            </code></pre>
+
+                </div>
+
+            </div>
+
+        </div>
+    </li>
+
+    <li class="accordion-item" data-accordion-item>
+
+        <a href="#" class="accordion-title">Feed get. Получить инфо про записи по key</a>
+
+        <div class="accordion-content" data-tab-content>
+            <div class="grid-x grid-margin-x">
+                <div class="cell small-12 medium-6">
+                    <h5>Request:</h5>
+                    <ul>
+                        <li><b>method_name</b>: feed_get</li>
+                        <li><b>m</b>: 2</li>
+                        <li><b>public_key</b>: (string)</li>
+                        <li><b>limit</b>: (int)</li>
+                        <li><b>page</b>: (int)</li>
+                        <li>~ <b>private_key</b>: (string)</li>
+                        <li>~ <b>search</b>: (string)</li>
+                    </ul>
+                </div>
+                <div class="cell small-12 medium-6">
+                    <h5>Response:</h5>
+
+                    <pre><code class="json">
+{
+  "response": {
+    "stack": {
+      "first": null,
+      "last": 2,
+      "center": 1,
+      "prev": null,
+      "next": 2,
+      "left": [],
+      "right": [
+        2
+      ]
+    },
+    "items": [
+      {
+        "id": 7,
+        "client_id": 21,
+        "title": "Eos saepe est cupiditate quia.",
+        "text": "HE taught us Drawling, Stretching, and Fainting in Coils.' 'What was THAT like?' said Alice. 'Come, let's try Geography. London is the driest thing I ask! It's always six o'clock now.' A bright idea.",
+        "date": 1522330943,
+        "protected": 1
+      },
+      {
+        "id": 6,
+        "client_id": 21,
+        "title": "2dfdsf sdf sdf dsf",
+        "text": "sdas dasd asd asd asd asd",
+        "date": 1522138105,
+        "protected": 0
+      }
+    ],
+    "search": false
+  }
+}
+                            </code></pre>
+
+                </div>
+
+            </div>
+
+        </div>
+    </li>
+
 
 </ul>
